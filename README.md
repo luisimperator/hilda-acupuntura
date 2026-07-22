@@ -26,3 +26,4 @@ Qualquer host estático serve (Vercel, GitHub Pages, Netlify). Não há passo de
 - [ ] Domínio próprio + tag `canonical` e `og:url`
 - [ ] Imagem Open Graph 1200×630 (compartilhamento no WhatsApp fica muito melhor)
 - [ ] Google Business Profile apontando para o site
+- [ ] Tag do Google (gtag) + evento de conversão de clique nos links `wa.me` — necessário antes de subir campanha de tráfego pago
