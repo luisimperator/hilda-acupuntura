@@ -123,6 +123,14 @@ h1,h2,h3{font-family:var(--font-display);font-weight:400;line-height:1.04;letter
   padding:38px 34px 32px;box-shadow:0 30px 70px -40px rgba(31,27,22,.28);
 }
 .scale-card .label{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:6px}
+.loc-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.loc-pill{
+  font-family:var(--font-body);font-weight:600;font-size:13.5px;color:var(--ink-60);
+  background:var(--cream);border:1px solid var(--hairline);border-radius:99px;
+  padding:9px 16px;cursor:pointer;transition:background .15s,border-color .15s,color .15s;
+}
+.loc-pill:hover{border-color:var(--hairline-strong)}
+.loc-pill.active{background:var(--jade);border-color:var(--jade);color:var(--cream)}
 .scale-num{font-family:var(--font-display);font-size:clamp(88px,9vw,132px);line-height:.9;font-variant-numeric:tabular-nums}
 .scale-num sub{font-size:21px;color:var(--stone);font-family:var(--font-mono);vertical-align:baseline;margin-left:8px;letter-spacing:.06em}
 .scale-word{font-style:italic;font-size:17px;color:var(--cinnabar);min-height:26px;margin:6px 0 24px;font-weight:500}
@@ -427,6 +435,14 @@ footer .disclaimer{max-width:460px;font-size:12.5px;line-height:1.7;color:var(--
         </div>
       </div>
       <div class="scale-card">
+        <div class="label">Onde dói mais?</div>
+        <div class="loc-pills" role="group" aria-label="Onde dói mais">
+          <button type="button" class="loc-pill" data-loc="nas costas">Costas</button>
+          <button type="button" class="loc-pill" data-loc="no pescoço ou ombro">Pescoço / ombro</button>
+          <button type="button" class="loc-pill" data-loc="na cabeça">Cabeça</button>
+          <button type="button" class="loc-pill" data-loc="no joelho">Joelho</button>
+          <button type="button" class="loc-pill" data-loc="em outro lugar">Outro lugar</button>
+        </div>
         <div class="label">Marque a sua dor hoje</div>
         <div class="scale-num"><span id="painNum">7</span><sub>/10</sub></div>
         <div class="scale-word" id="painWord">Manda na sua rotina.</div>
@@ -685,9 +701,11 @@ document.documentElement.classList.add('js');
 const range=document.getElementById('painRange');
 const num=document.getElementById('painNum');
 const word=document.getElementById('painWord');
+const locPills=document.querySelectorAll('.loc-pill');
+let loc='';
 const words=v=>v<=2?'Leve — bom sinal.':v<=5?'Incomoda todos os dias.':v<=8?'Manda na sua rotina.':'Insuportável. Vamos cuidar disso.';
 const waBase='https://wa.me/5511972022143?text=';
-const waMsg=v=>encodeURIComponent('Olá, Hilda! Minha dor hoje está em '+v+'/10. Quero agendar minha Primeira Sessão Completa.');
+const waMsg=v=>encodeURIComponent('Olá, Hilda! Minha dor'+(loc?' é '+loc+',':'')+' hoje está em '+v+'/10. Quero agendar minha Primeira Sessão Completa.');
 function sync(){
   const v=range.value;
   num.textContent=v;
@@ -695,6 +713,13 @@ function sync(){
   document.querySelectorAll('.js-wa').forEach(a=>a.href=waBase+waMsg(v));
 }
 range.addEventListener('input',sync);sync();
+locPills.forEach(btn=>btn.addEventListener('click',()=>{
+  const active=btn.classList.contains('active');
+  locPills.forEach(b=>b.classList.remove('active'));
+  loc=active?'':btn.dataset.loc;
+  if(!active)btn.classList.add('active');
+  sync();
+}));
 
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
