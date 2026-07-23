@@ -28,10 +28,13 @@
   "founder": {"@type": "Person", "name": "Hilda de Oliveira"},
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Av. Chibarás, 75 — Ed. Ayla Moema",
     "addressLocality": "São Paulo",
     "addressRegion": "SP",
+    "postalCode": "04076-903",
     "addressCountry": "BR"
   },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Av.+Chibar%C3%A1s%2C+75+-+Moema%2C+S%C3%A3o+Paulo",
   "areaServed": "Moema, São Paulo",
   "telephone": "+5511972022143",
   "email": "hildadeoli@gmail.com",
@@ -288,6 +291,29 @@ input[type=range]::-moz-range-thumb{width:30px;height:30px;border-radius:50%;bac
 }
 .faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
 .faq .a{padding:0 0 24px;color:var(--ink-60);font-size:16px;line-height:1.75}
+
+/* onde */
+.local-sec{padding:104px 0 0}
+.local-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:stretch;margin-top:44px}
+.map-card{
+  border-radius:var(--r);overflow:hidden;border:1px solid var(--hairline);
+  box-shadow:0 30px 70px -40px rgba(31,27,22,.28);min-height:380px;background:var(--sand);
+}
+.map-card iframe{width:100%;height:100%;min-height:380px;border:0;display:block;filter:grayscale(.85) sepia(.14);transition:filter .3s}
+.map-card:hover iframe{filter:none}
+.local-info{
+  background:var(--card);border:1px solid var(--hairline);border-radius:var(--r);
+  padding:34px 32px;display:flex;flex-direction:column;
+}
+.local-info .row{display:grid;grid-template-columns:92px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--hairline);font-size:15.5px;line-height:1.6}
+.local-info .k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);padding-top:3px}
+.local-info .btn-primary{margin-top:auto}
+.local-info .rows{margin-bottom:28px}
+@media(max-width:960px){
+  .local-grid{grid-template-columns:1fr}
+  .map-card{min-height:300px}
+  .map-card iframe{min-height:300px}
+}
 
 /* final */
 .final{text-align:center;padding:128px 0}
@@ -597,6 +623,29 @@ footer .disclaimer{max-width:460px;font-size:12.5px;line-height:1.7;color:var(--
   </div>
 </section>
 
+<section class="local-sec" id="onde">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Onde</span>
+      <h2>No coração de Moema.</h2>
+      <p>Consultório no Ed. Ayla Moema — Av. Chibarás, 75, a cerca de 300 metros da estação Moema do metrô (Linha 5–Lilás).</p>
+    </div>
+    <div class="local-grid reveal">
+      <div class="map-card">
+        <iframe src="https://www.google.com/maps?q=Av.+Chibar%C3%A1s,+75+-+Moema,+S%C3%A3o+Paulo+-+SP&amp;output=embed&amp;hl=pt-BR" title="Mapa — Av. Chibarás, 75, Moema, São Paulo" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+      <div class="local-info">
+        <div class="rows">
+          <div class="row"><span class="k">Endereço</span><span>Av. Chibarás, 75 — Ed. Ayla Moema<br>Moema · São Paulo, SP · CEP 04076-903</span></div>
+          <div class="row"><span class="k">Metrô</span><span>Estação Moema (Linha 5–Lilás), a ~300 m</span></div>
+          <div class="row"><span class="k">Chegando</span><span>Você recebe as orientações completas na confirmação da sessão, pelo WhatsApp</span></div>
+        </div>
+        <a class="btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Chibar%C3%A1s%2C+75+-+Moema%2C+S%C3%A3o+Paulo+-+SP" target="_blank" rel="noopener">Como chegar <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="final">
   <div class="wrap reveal">
     <h2>Ainda dói<span class="q">?</span></h2>
@@ -613,7 +662,8 @@ footer .disclaimer{max-width:460px;font-size:12.5px;line-height:1.7;color:var(--
         <span class="name">Hilda de Oliveira</span>
         <span class="tag">Acupuntura Clínica</span>
       </div>
-      <p>Moema — São Paulo, SP<br>
+      <p>Ed. Ayla Moema — Av. Chibarás, 75 · Moema<br>
+      São Paulo, SP · CEP 04076-903<br>
       <a href="https://wa.me/5511972022143" target="_blank" rel="noopener">WhatsApp (11) 97202-2143</a><br>
       <a href="mailto:hildadeoli@gmail.com">hildadeoli@gmail.com</a></p>
     </div>
