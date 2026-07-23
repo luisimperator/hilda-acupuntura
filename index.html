@@ -143,7 +143,7 @@ input[type=range]::-moz-range-thumb{width:30px;height:30px;border-radius:50%;bac
 
 /* photo band — a experiência */
 .exp{padding:36px 0 96px}
-.exp-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px;margin-bottom:44px}
+.exp-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:18px;margin-bottom:44px}
 .photo{
   border-radius:var(--r);position:relative;overflow:hidden;
   background:linear-gradient(160deg,var(--sand),#E2D5C0);
@@ -258,9 +258,10 @@ input[type=range]::-moz-range-thumb{width:30px;height:30px;border-radius:50%;bac
 .about{display:grid;grid-template-columns:minmax(260px,340px) 1fr;gap:64px;align-items:start}
 .portrait{
   aspect-ratio:4/5;background:linear-gradient(165deg,var(--sand),#E0D3BE);
-  border:1px solid var(--hairline);border-radius:var(--r);position:relative;
+  border:1px solid var(--hairline);border-radius:var(--r);position:relative;overflow:hidden;
   display:flex;align-items:center;justify-content:center;
 }
+.portrait img{width:100%;height:100%;object-fit:cover}
 .portrait .seal{
   width:92px;height:92px;border-radius:50%;border:1.5px solid var(--cinnabar);
   display:flex;align-items:center;justify-content:center;
@@ -444,6 +445,7 @@ footer .disclaimer{max-width:460px;font-size:12.5px;line-height:1.7;color:var(--
   <div class="wrap">
     <div class="exp-grid reveal">
       <div class="photo"><img src="img/sala-atendimento.jpg" alt="Sala de atendimento com maca reclinável, espelho retroiluminado e bancada de mármore" loading="lazy"><span>A sala de atendimento · Moema</span></div>
+      <div class="photo"><img src="img/sessao-agulhas.jpg" alt="Hilda de Oliveira aplicando agulha de acupuntura nas costas de uma paciente" loading="lazy"><span>Uma sessão em andamento</span></div>
       <div class="photo"><img src="img/detalhe-agulhas.jpg" alt="Agulhas de acupuntura estéreis e descartáveis preparadas em bandeja" loading="lazy"><span>Agulhas estéreis · uso único</span></div>
       <div class="photo"><img src="img/recepcao.jpg" alt="Recepção com poltrona e planta" loading="lazy"><span>Recepção · Ed. Ayla Moema</span></div>
     </div>
@@ -579,10 +581,7 @@ footer .disclaimer{max-width:460px;font-size:12.5px;line-height:1.7;color:var(--
 <section class="about-sec">
   <div class="wrap">
     <div class="about">
-      <div class="portrait reveal">
-        <div class="seal">H·O</div>
-        <small>Retrato em produção</small>
-      </div>
+      <div class="portrait reveal"><img src="img/retrato-hilda.jpg" alt="Retrato de Hilda de Oliveira, acupunturista e massoterapeuta" loading="lazy"></div>
       <div class="about-txt reveal">
         <span class="eyebrow">Quem vai te atender</span>
         <h2>Quem formou os profissionais do mercado.</h2>
