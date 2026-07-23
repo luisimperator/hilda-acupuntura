@@ -21,7 +21,8 @@ Qualquer host estático serve (Vercel, GitHub Pages, Netlify). Não há passo de
 
 ## Pendências antes de ir ao ar
 
-- [ ] Fotos reais: 3 da sala/atendimento (placeholders na seção "experiência") + retrato da Hilda (seção "sobre")
+- [x] Fotos do espaço na seção "experiência" (sala de atendimento, agulhas ilustrativa, recepção)
+- [ ] Retrato real da Hilda (seção "sobre") — aguardando ensaio fotográfico
 - [ ] Depoimentos reais — os 3 cards estão com placeholder de propósito, para não publicar avaliação inventada
 - [ ] Domínio próprio + tag `canonical` e `og:url`
 - [ ] Imagem Open Graph 1200×630 (compartilhamento no WhatsApp fica muito melhor)
