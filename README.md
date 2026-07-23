@@ -1,6 +1,6 @@
 # Hilda Acupuntura — Moema
 
-Landing page de **Hilda de Oliveira · Acupuntura Clínica** (Moema, São Paulo, SP).
+Landing page de **Hilda de Oliveira · Consultório de Acupuntura** (Moema, São Paulo, SP).
 
 Página única, 100% estática, sem build e sem dependências — todo o site vive em [`index.html`](index.html).
 
